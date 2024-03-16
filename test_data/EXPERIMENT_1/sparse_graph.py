@@ -53,7 +53,7 @@ if __name__ == "__main__":
         new_matrix[new_matrix == 0] = np.inf
         np.fill_diagonal(new_matrix, 0)
         start_time = time.time()
-        #ist = floydWarshall_adjacency_matrix(new_matrix, node, start_node, 9)
+        dist = floydWarshall_adjacency_matrix(new_matrix, node, start_node, 9)
         end_time = time.time()
         t = end_time - start_time
         folydwarshall_execution_times_adjacency_matrix.append(t)
@@ -67,7 +67,7 @@ if __name__ == "__main__":
 
     plt.plot(nodes_range, dijkstra_execution_times_adjacency_matrix, label="Dijkstra", marker='o')
     plt.plot(nodes_range, bellman_execution_times_adjacency_matrix, label="Bellman", marker='o')
-    #plt.plot(nodes_range, folydwarshall_execution_times_adjacency_matrix, label="FoldyWarshall", marker='o')
+    plt.plot(nodes_range, folydwarshall_execution_times_adjacency_matrix, label="FoldyWarshall", marker='o')
     plt.plot(nodes_range, johnson_execution_times_adjacency_matrix, label="Johnson", marker='o')
     plt.title("Sparse Graph")
     plt.xlabel("Number of Nodes")

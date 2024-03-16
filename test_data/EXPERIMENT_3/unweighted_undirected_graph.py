@@ -51,7 +51,7 @@ if __name__ == "__main__":
         # bellman ford algorithm
 
         start_time = time.time()
-        #dist = BellmanFord(start_node, 9, node, graph)
+        dist = BellmanFord(start_node, 9, node, graph)
         end_time = time.time()
         t = end_time - start_time
         bellman_execution_times_adjacency_matrix.append(t)
@@ -70,7 +70,7 @@ if __name__ == "__main__":
         # johnson's algorithm
 
         start_time = time.time()
-        #dist = JohnsonAlgorithm(adj_matrix, start_node, 9)
+        dist = JohnsonAlgorithm(adj_matrix, start_node, 9)
         end_time = time.time()
         t = end_time - start_time
         johnson_execution_times_adjacency_matrix.append(t)
@@ -78,9 +78,9 @@ if __name__ == "__main__":
 
 
     plt.plot(nodes_range, dijkstra_execution_times_adjacency_matrix, label="Dijkstra", marker='o')
-    #plt.plot(nodes_range, bellman_execution_times_adjacency_matrix, label="Bellman", marker='o')
-    #plt.plot(nodes_range, folydwarshall_execution_times_adjacency_matrix, label="FlodyWarshall", marker='o')
-    #plt.plot(nodes_range, johnson_execution_times_adjacency_matrix, label="Johnson", marker='o')
+    plt.plot(nodes_range, bellman_execution_times_adjacency_matrix, label="Bellman", marker='o')
+    plt.plot(nodes_range, floydwarshall_execution_times_adjacency_matrix, label="FlodyWarshall", marker='o')
+    plt.plot(nodes_range, johnson_execution_times_adjacency_matrix, label="Johnson", marker='o')
     plt.plot(nodes_range, bfs_times, label="BFS", marker='o')
     plt.title("unweighted graph")
     plt.xlabel("Number of Nodes")

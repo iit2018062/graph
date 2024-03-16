@@ -116,7 +116,7 @@ def has_negative_cycle(graph):
 
 # Driver Code
 if __name__ == "__main__":
-    nodes_range = range(10, 100, 10)
+    nodes_range = range(2, 5, 1)
     dijkstra_execution_times_adjacency_list = []
     dijkstra_execution_times_adjacency_matrix = []
     for node in nodes_range:

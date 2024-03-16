@@ -40,7 +40,7 @@ def graph_generate(num_nodes, probability, weight_range=(-1.0, 1.0)):
 
 
 if __name__ == "__main__":
-    nodes_range = range(100, 2000, 100)
+    nodes_range = range(1000, 3000, 1000)
     dijkstra_execution_times_adjacency_matrix = []
     bellman_execution_times_adjacency_matrix = []
     folydwarshall_execution_times_adjacency_matrix = []
@@ -87,7 +87,7 @@ if __name__ == "__main__":
         johnson_execution_times_adjacency_matrix.append(t)
 
     plt.plot(nodes_range, bellman_execution_times_adjacency_matrix, label="Bellman", marker='o')
-    #plt.plot(nodes_range, folydwarshall_execution_times_adjacency_matrix, label="FoldyWarshall", marker='o')
+    plt.plot(nodes_range, folydwarshall_execution_times_adjacency_matrix, label="FoldyWarshall", marker='o')
     plt.plot(nodes_range, johnson_execution_times_adjacency_matrix, label="Johnson", marker='o')
     plt.title("Negative weights Time vs. Number of Nodes")
     plt.xlabel("Number of Nodes")

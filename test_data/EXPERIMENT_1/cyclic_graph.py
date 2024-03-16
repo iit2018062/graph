@@ -79,14 +79,14 @@ if __name__ == "__main__":
         np.fill_diagonal(new_matrix, 0)
 
         start_time = time.time()
-        #dist = floydWarshall_adjacency_matrix(new_matrix,node, 0, node-1)
+        dist = floydWarshall_adjacency_matrix(new_matrix,node, 0, node-1)
         end_time = time.time()
         t = end_time - start_time
         folydwarshall_execution_times_adjacency_matrix.append(t)
 
     plt.plot(nodes_range, dijkstra_execution_times_adjacency_matrix, label="Dijkstra", marker='o')
     plt.plot(nodes_range, bellman_execution_times_adjacency_matrix, label="Bellman", marker='o')
-    #plt.plot(nodes_range, folydwarshall_execution_times_adjacency_matrix, label="FoldyWarshall", marker='o')
+    plt.plot(nodes_range, folydwarshall_execution_times_adjacency_matrix, label="FoldyWarshall", marker='o')
     plt.plot(nodes_range, johnson_execution_times_adjacency_matrix, label="Johnson", marker='o')
     plt.title("Cyclic Graph")
     plt.xlabel("Number of Nodes")
